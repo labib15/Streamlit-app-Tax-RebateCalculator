@@ -1,7 +1,7 @@
 import streamlit as st
 
 #st.markdown( """ <style> div[data-baseweb="input"] input { font-size: 21px; /* Change number input text size */ } </style> """, unsafe_allow_html=True )
-st.title("Tax Rebate Calculator")
+st.title("Tax & Rebate Calculator")
 
 options = ["Private Job", "Govt Job", "Other"]
 st.markdown("<div style='font-size:20px; font-weight:bold;margin-bottom:0;'> Please select your profession </div>",
@@ -136,5 +136,6 @@ if taxable_amount > 0:
     st.write(f"Total Rebate: TK {actual_rebate:,.2f}")
 
     st.write(f"Total Income Tax Due: TK {income_tax(taxable_amount):,}")
+
 
     st.error(f"Net Tax to be paid: TK {max(income_tax(taxable_amount) - actual_rebate - st_amount_approved,0):,.2f}")
